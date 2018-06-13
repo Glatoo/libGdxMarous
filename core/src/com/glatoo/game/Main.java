@@ -11,6 +11,7 @@ public class Main extends ApplicationAdapter {
 	private Texture img;
 	private int x;
 	private int y;
+	private int adder;
 	
 	@Override
 	public void create () {
@@ -18,6 +19,7 @@ public class Main extends ApplicationAdapter {
 		img = new Texture("badlogic.jpg");
 		x = 0;
 		y = 0;
+		adder = 5;
 	}
 
 	@Override
@@ -27,8 +29,9 @@ public class Main extends ApplicationAdapter {
 		batch.begin();
 		batch.draw(img, x, y);
 		batch.end();
-		x++;
-		y++;
+		if (y >= 600-img.getHeight() || y < 0){adder = -adder;}
+		x+=adder;
+		y+=adder;
 	}
 	
 	@Override

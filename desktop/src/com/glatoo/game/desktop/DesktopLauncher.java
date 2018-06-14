@@ -10,6 +10,7 @@ public class DesktopLauncher {
 		config.width=800;
 		config.height=600;
 		config.title="PES";
+		//config.foregroundFPS=60;
 		new LwjglApplication(new Main(), config);
 	}
 }

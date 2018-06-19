@@ -34,6 +34,14 @@ public class OrthographicCameraClass  {
     }
 
     public void handleInput(MyInputProcessor input) {
+        if (input.getScrollValue() == 1){
+            cam.zoom += 0.1f;
+            input.setScrollValue(0);
+        }
+        if (input.getScrollValue() == -1){
+            cam.zoom -= 0.1f;
+            input.setScrollValue(0);
+        }
 
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
             cam.translate(-3, 0);
